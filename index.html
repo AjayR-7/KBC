@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KBC Game</title>
+    <link rel="stylesheet" href="KBC.css">
+</head>
+<body>
+    <div class="container">
+        
+        <main>
+            <div class="question-container">
+                <h2 id="question"></h2>
+            </div>
+            <div class="options-container">
+                <button class="option" id="optionA"></button>
+                <button class="option" id="optionB"></button>
+                <button class="option" id="optionC"></button>
+                <button class="option" id="optionD"></button>
+            </div>
+            <button id="submit-button" disabled></button>
+        </main>
+        <div class="result-container" style="display: none;">
+            <p id="result"></p>
+            <p id="total-score"></p>
+        </div>
+        <div class="question-navigation">
+            <button id="next-question">Next Question</button>
+        </div>
+        
+    </div>
+    <body class = "a">
+        <div class="name-container">
+            <div class="letter">&copy</div>
+            <div class="letter">_</div>
+            <div class="letter">A</div>
+            <div class="letter">j</div>
+            <div class="letter">a</div>
+            <div class="letter">y</div>
+            <div class="letter">_</div>
+        </div>
+        </body>
+    <script src="KBC.js"></script>
+</body>
+
+</html>
