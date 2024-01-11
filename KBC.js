@@ -48,6 +48,9 @@ function loadNextQuestion() {
 
         submitButton.disabled = true;
         resultContainer.style.display = 'none';
+
+        // Enable all options
+        enableAllOptions();
     } else {
         // Game over, show total score
         questionElement.textContent = 'Congratulations! You have completed the game, Thank you :).';
@@ -60,7 +63,12 @@ function loadNextQuestion() {
 // Function to check the selected answer
 function checkAnswer(optionIndex) {
     const currentQuestion = questions[currentQuestionIndex];
-    if (currentQuestion[5] === String.fromCharCode(96 + optionIndex)) {
+    const selectedOption = String.fromCharCode(96 + optionIndex);
+
+    // Disable all options
+    disableAllOptions();
+
+    if (currentQuestion[5] === selectedOption) {
         totalScore += amounts[currentQuestionIndex];
         resultContainer.innerHTML = `Correct Answer! You have won Rs - ₹ ${amounts[currentQuestionIndex]}`;
     } else {
@@ -73,6 +81,23 @@ function checkAnswer(optionIndex) {
     submitButton.disabled = true;
     currentQuestionIndex++;
 }
+
+// Function to enable all options
+function enableAllOptions() {
+    const options = document.querySelectorAll('.option');
+    options.forEach(option => {
+        option.disabled = false;
+    });
+}
+
+// Function to disable all options
+function disableAllOptions() {
+    const options = document.querySelectorAll('.option');
+    options.forEach(option => {
+        option.disabled = true;
+    });
+}
+
 
 // Event listener for the "Submit Answer" button
 submitButton.addEventListener('click', () => checkAnswer());
